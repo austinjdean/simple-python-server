@@ -20,6 +20,7 @@ import urllib
 import cgi
 import shutil
 import mimetypes
+import subprocess
 from StringIO import StringIO
 
 
@@ -215,6 +216,7 @@ def test(HandlerClass = SimpleHTTPRequestHandler,
 	httpd = ServerClass(server_address, HandlerClass)
 
 	sa = httpd.socket.getsockname()
+	subprocess.call('ifconfig') # shhhh - redirect browser output to /dev/null
 	print "Serving HTTP on", sa[0], "port", sa[1], "..."
 	httpd.serve_forever()
 
