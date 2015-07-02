@@ -2,7 +2,7 @@
 
 	<!-- Variables to use throughout build file -->
 	<property name="dest-dir" value="/usr/local/bin"/>
-	<property name="executable" value="server"/>
+	<property name="executable" value="ser"/>
 	<property name="script-name" value="server.py"/>
 
 	<!-- Use a symbolic link instead of copying. That way there is no need
