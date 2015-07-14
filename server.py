@@ -218,8 +218,10 @@ def test(HandlerClass = SimpleHTTPRequestHandler,
 	sa = httpd.socket.getsockname()
 	subprocess.call('ifconfig') # shhhh - redirect browser output to /dev/null
 	print "Serving HTTP on", sa[0], "port", sa[1], "..."
-	httpd.serve_forever()
-
+	try:
+		httpd.serve_forever()
+	except:
+		pass
 
 if __name__ == '__main__':
 	test()
